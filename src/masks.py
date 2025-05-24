@@ -19,7 +19,7 @@ def get_mask_account(mask: str | int) -> str:
     return "**" + mask[-4:]
 
 
-get_mask_card = get_mask_card_number(2042888836664441)
-print(get_mask_card)
-mask_account = get_mask_account(2134564758)
-print(mask_account)
+# get_mask_card = get_mask_card_number(2042888836664441)
+# print(get_mask_card)
+# mask_account = get_mask_account(2134564758)
+# print(mask_account)
