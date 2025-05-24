@@ -28,9 +28,9 @@ def get_date(date: str) -> str:
     return date_td
 
 
-mask_card = mask_account_card("Maestro 7000792289606361")
-print(mask_card)
-# mask_account = mask_account_card("Счет 73654108430135874305")
-# print(mask_account)
-date_today = get_date("2024-03-11T02:26:18.671407")
-print(date_today)
+# mask_card = mask_account_card("Maestro 7000792289606361")
+# print(mask_card)
+# # mask_account = mask_account_card("Счет 73654108430135874305")
+# # print(mask_account)
+# date_today = get_date("2024-03-11T02:26:18.671407")
+# print(date_today)

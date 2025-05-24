@@ -1,0 +1,59 @@
+# Банковские операции
+
+Проект предоставляет набор утилит для работы с банковскими операциями:
+- Маскирование номеров карт и счетов
+- Фильтрация и сортировка операций
+- Форматирование дат
+
+## Установка
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/Vadim Devlekamov/bank-operations.git
+Перейдите в директорию проекта:
+
+bash
+cd bank-operations
+Использование
+Маскирование данных
+python
+from src.masks import get_mask_card_number, get_mask_account, mask_account_card
+
+# Маскирование номера карты
+print(get_mask_card_number("1234567890123456"))  # "1234 56** **** 3456"
+
+# Маскирование номера счета
+print(get_mask_account("123456789"))  # "**6789"
+
+# Автоматическое определение типа (карта/счет)
+print(mask_account_card("Visa Platinum 1234567890123456"))  # "Visa Platinum 1234 56** **** 3456"
+print(mask_account_card("Счет 123456789"))  # "Счет **6789"
+Работа с датами
+python
+from src.widget import get_date
+
+print(get_date("2019-07-03T18:35:29.512364"))  # "03.07.2019"
+Фильтрация и сортировка операций
+python
+from src.processing import filter_by_state, sort_by_date
+
+operations = [
+    {"id": 1, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+    {"id": 2, "state": "CANCELED", "date": "2018-06-30T02:08:58.425572"}
+]
+
+# Фильтрация по статусу
+print(filter_by_state(operations, "EXECUTED"))
+
+# Сортировка по дате
+print(sort_by_date(operations))
+Требования
+Python 3.8+
+
+Для проверки типов рекомендуется использовать mypy
+
+Тестирование
+bash
+python -m pytest tests/
+Лицензия
+MIT
+
